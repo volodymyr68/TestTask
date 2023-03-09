@@ -1,0 +1,36 @@
+server:
+  shutdown: graceful
+  port: 8080
+spring:
+  liquibase:
+    enabled: true
+  application:
+    name: student-api-service
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+      FAIL_ON_EMPTY_BEANS: false
+      INDENT-OUTPUT: true
+      WRITE_ENUMS_USING_TO_STRING: true
+    deserialization:
+      FAIL_ON_MISSING_EXTERNAL_TYPE_ID_PROPERTY: false
+      READ_ENUMS_USING_TO_STRING: true
+
+  datasource.url : jdbc:postgresql://localhost:5432/TestTask
+  datasource.username : postgres
+  datasource.password : password
+  ## Hibernate Properties
+  # The SQL dialect makes Hibernate generate better SQL for the chosen database
+  jpa:
+    properties:
+      hibernate.dialect : org.hibernate.dialect.PostgreSQLDialect
+
+  # Hibernate ddl auto (create, create-drop, validate, update)
+  jpa.hibernate.ddl-auto : validate
+logging:
+  level:
+    org.springframework.web.servlet.handler : INFO
+flyway:
+  user: postgres
+  password: password
+  url: jdbc:postgresql://localhost:5432/TestTask
