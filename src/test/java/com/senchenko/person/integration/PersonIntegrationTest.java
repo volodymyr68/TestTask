@@ -116,7 +116,7 @@ public class PersonIntegrationTest extends BaseIntegrationTest {
 
     @Test
     @SneakyThrows
-    @DisplayName("Update sticker test")
+    @DisplayName("Update person test")
     void updateTest() {
         val person = getObjectMapper().readValue(
                 FileUtil.getResourceFileAsString("json/person/person.json")
